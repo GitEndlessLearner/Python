@@ -9,10 +9,10 @@ class Bullet(Sprite):
 		super(Bullet, self).__init__()
 		self.screen = screen
 
-		# 在（0,0）处创建一个表示子弹的矩形，再设置正确的位置
-		self.rect = pygame.Rect(0, 0, ai_sittings.bullet_width,
-			ai_sittings.bullet_height)
-		self.color = ai_sittings.bullet_color
+		# 加载飞船图像并获取外接矩形
+		self.image = pygame.image.load('images/ball.jpg')
+		self.rect = self.image.get_rect()
+		self.screen_rect = screen.get_rect()
 
 		self.rect.centerx = ship.rect.centerx
 		self.rect.top = ship.rect.top
@@ -33,4 +33,4 @@ class Bullet(Sprite):
 
 	def draw_bullet(self):
 		"""在屏幕上绘制子弹"""
-		pygame.draw.rect(self.screen, self.color, self.rect)
+		self.screen.blit(self.image, self.rect)
