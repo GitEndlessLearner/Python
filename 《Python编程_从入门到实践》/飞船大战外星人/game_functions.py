@@ -45,6 +45,7 @@ def check_play_button(ai_settings, screen, stats, play_button, ship, aliens,
 		# 重置游戏统计信息
 		stats.reset_stats()
 		stats.game_active = True
+		pygame.mouse.set_visible(False)
 
 		# 清空外星人列表和子弹列表
 		aliens.empty()
@@ -149,6 +150,7 @@ def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
 		sleep(0.5)
 	else:
 		stats.game_active = False
+		pygame.mouse.set_visible(True)
 
 def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
 	"""更新所有外新人数量"""

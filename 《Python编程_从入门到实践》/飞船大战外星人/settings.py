@@ -4,7 +4,7 @@ class Settings():
 	"""存储外星人所有的设置类"""
 
 	def __init__(self):
-		"""初始化游戏的设置"""
+		"""初始化游戏的静态设置"""
 		# 屏幕设置
 		self.screen_width = 1200
 		self.screen_height = 600
